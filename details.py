@@ -18,5 +18,5 @@ for i in range(loop):
         line += sym3
     print(line)
 
-print(("sorry, that was some random junk ;)")
+print("Just some random pyramid.")
 
