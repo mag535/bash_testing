@@ -56,11 +56,13 @@ class Area{
 	// main
 	public static void main(String[] args){
 		System.out.println("Welcome to Area!");
-		Job = Area(2,3,4,5);
+		Area Job = new Area(2,3,4,5);
 
 		System.out.println("Length: " + Job.getLength());
 		System.out.println("Width: " + Job.getWidth());
 		System.out.println("Height: " + Job.getHeight());
 		System.out.println("Base: " + Job.getBase());
+
+		System.out.println("This is the area of a rectangle with length " + Job.getLength() + " and width " + Job.getWidth() + ": " + Job.calcRect());
 	}
 }
