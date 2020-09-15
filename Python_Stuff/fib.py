@@ -1,7 +1,7 @@
 # This calculates the Fibanacci Sequence
 # Maybe some graphics will be added later
 
-import numpy as np
+# For later: import numpy as np
 
 class Fibber():
 	# Fibber vars
@@ -18,6 +18,13 @@ class Fibber():
 		self.limit = lim
 		return
 
+	def print_sequence(self):
+		if len(Fibber.seq) > 1:
+			print("\n", Fibber.seq)
+		else:
+			print("\nPlease run \'create_sequence()\' first")
+		return
+
 	def how(self):
 		print("How the fibanacci sequence is calculated:")
 		print("\t a2 + a1 = a0")
@@ -31,7 +38,7 @@ class Fibber():
 		Fibber.seq.append(a2)
 		Fibber.seq.append(a1)
 		a0 = -1
-		while a0 < self.limit:
+		while (a1+a2) < self.limit:
 			a0 = a1 + a2
 			print("{} + {} = {}".format(a2, a1, a0))
 			a2 = a1
@@ -39,33 +46,39 @@ class Fibber():
 			Fibber.seq.append(a0)
 		return
 
-	def uno_card(self, sym1, sym2=sym1):
+	def uno_card(self, sym1, sym2):
 		if len(Fibber.seq) < 1:
 			print("Please run \'create_sequence()\' first.")
 		else:
 			print("\n")
 			lenny = len(Fibber.seq)
 			max_lenny = Fibber.seq[-1]
-			for f in range lenny:
+			for f in range(lenny):
 				part1 = ''
 				part2 = ''
 				for i in range(Fibber.seq[f]):
 					part1 += sym1
-				for j in range(Fibber.seq[l-f-1]):
+				for j in range(Fibber.seq[lenny-f-1]):
 					part2 += sym2
-			print("{:{<}}".format(part1, max_lenny), end='', "{:{>}}".format(part2, max_lenny))
+				print("{:<{}}".format(part1, max_lenny), "{:>{}}".format(part2, max_lenny))
+			print()
 		return
 
-	def twist(self, sym1):
+	def twist(self, sym):
 		if len(Fibber.seq) < 1:
 			print("Please run \'create_sequence()\' first")
 		else:
 			lenny = len(Fibber.seq)
 			print("\n")
-			for f in range(-l, l):
+			for f in range(-lenny,0,-1):
 				line = ''
-				for i in range(f):
-					line += sym1
+				for i in range(Fibber.seq[f]):
+					line += sym
+				print(line)
+			for f in range(lenny):
+				line = ''
+				for j in range(Fibber.seq[f]):
+					line += sym
 				print(line)
 		return
 
