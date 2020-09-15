@@ -7,13 +7,13 @@ from fib import Fibber
 
 #%% MAIN
 
-print("starting...")
+print("starting...\n")
 
 if __name__ == "__main__":
-	print("I hope this runs...")
 	# objects
-	Fool = Fibber(100)
+	Fool = Fibber(50)
 	
 	# other code
 	Fool.create_sequence()
-	Fool.uno_card()
+	#Fool.uno_card('*', '*')
+	Fool.twist('.')
