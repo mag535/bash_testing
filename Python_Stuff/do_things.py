@@ -7,7 +7,10 @@ from fib import Fibber
 
 #%% MAIN
 
+print("starting...")
+
 if __name__ == "__main__":
+	print("I hope this runs...")
 	# objects
 	Fool = Fibber(100)
 	
